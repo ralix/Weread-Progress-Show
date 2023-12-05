@@ -15,6 +15,6 @@
 
 3、随着滚动条的下滑，进度随之更新
 
-## Showcase
+## Screenshot
+![image](https://github.com/ralix/Weread-Progress-Show/assets/3196716/3368bdb8-a2bd-409c-a8fd-dd211516cdfe)
 
-![image](https://github.com/ralix/Weread-Progress-Show/assets/3196716/2d8177d0-c041-470a-8d67-6001b08758a5)
