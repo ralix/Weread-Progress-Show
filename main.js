@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Weread-Progress-Show
 // @namespace    https://github.com/ralix/Weread-Progress-Show
-// @version      1.0
+// @version      1.0.1
 // @description  在网页版微信读书右下角显示当前阅读进度
 // @match        https://weread.qq.com/*
 // @grant        GM_addStyle
@@ -19,6 +19,8 @@ var nextChapterRatio;
 
     // watch chapter change
     watchChapterChange();
+
+
 
 })();
 
@@ -97,15 +99,6 @@ function updateChapterRatio(chapterItems) {
 //show the percentage result
 function updateProgressBox(result){
 
-    let progressBox = document.querySelector("#progressBox");
-
-    if (!progressBox){
-        progressBox = document.createElement('div');
-        progressBox.setAttribute('id', 'progressBox');
-    }
-
-    progressBox.innerHTML = result + "%";
-
     GM_addStyle('#progressBox {position: fixed; bottom: 60px; right: 5px; width: 50px; \
     height: 30px; \
     font-size: xx-small; \
@@ -119,5 +112,28 @@ function updateProgressBox(result){
     color: #fff; \
     border-radius: 5px;\ }')
 
-    document.body.appendChild(progressBox);
+    let progressBox = document.querySelector("#progressBox");
+
+    if (!progressBox){ //not found, then create.
+        progressBox = document.createElement('div');
+        progressBox.setAttribute('id', 'progressBox');
+        document.body.appendChild(progressBox);
+    }
+    //update
+    progressBox.innerHTML = result + "%";
+
+    let footer = document.querySelector('.readerFooter');
+    let footerAddon = document.querySelector('#footerAddon');
+    if (footer && !footerAddon) {
+        footerAddon = document.createElement('div');
+        footerAddon.setAttribute('id', 'footerAddon');
+        footerAddon.setAttribute('style',"font-size:large");
+        footer.style.padding="380px 100px";
+        footer.appendChild(footerAddon);
+
+    }
+    //update
+    footerAddon.innerHTML = "<p>Progress Now:</p> <p>"+ result + "% </p>";
+
+
 }

@@ -18,3 +18,6 @@
 ## Screenshot
 ![image](https://github.com/ralix/Weread-Progress-Show/assets/3196716/3368bdb8-a2bd-409c-a8fd-dd211516cdfe)
 
+## Update:
+1.0.1 
+每个章节结尾添加了当前进度提示，以及多余的空白空间，提升翻页体验。
