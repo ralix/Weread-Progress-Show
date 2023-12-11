@@ -15,6 +15,8 @@
 
 3、随着滚动条的下滑，进度随之更新
 
+4、每个章节结束会显示当前章节的进度
+
 ## Screenshot
 ![image](https://github.com/ralix/Weread-Progress-Show/assets/3196716/3368bdb8-a2bd-409c-a8fd-dd211516cdfe)
 ![image](https://github.com/ralix/Weread-Progress-Show/assets/3196716/01447912-1787-455c-a333-dbb94b4c17a5)
